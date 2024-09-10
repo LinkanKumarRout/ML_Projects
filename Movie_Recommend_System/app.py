@@ -13,7 +13,6 @@ st.title("Movie Recommendation System")
 def fetch_poster(movie_id):
     response = requests.get("https://api.themoviedb.org/3/movie/{}?api_key={}&language=en-US".format(movie_id, API_KEY))
     data = response.json()
-    print(data)
     return "https://image.tmdb.org/t/p/w500/" + data['poster_path']
 
 def recommend(movie):
